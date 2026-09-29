@@ -51,12 +51,44 @@
   Projetos em destaque
 </h2>
 
-<div align="center">
-  <a href="https://github.com/cairocruz/hubAgentsV2"><img src="https://github-readme-stats.vercel.app/api/pin/?username=cairocruz&repo=hubAgentsV2&theme=tokyonight&hide_border=true&description_lines_count=2" /></a>
-  <a href="https://github.com/cairocruz/Music.AI"><img src="https://github-readme-stats.vercel.app/api/pin/?username=cairocruz&repo=Music.AI&theme=tokyonight&hide_border=true&description_lines_count=2" /></a>
-  <a href="https://github.com/cairocruz/ttsAPI"><img src="https://github-readme-stats.vercel.app/api/pin/?username=cairocruz&repo=ttsAPI&theme=tokyonight&hide_border=true&description_lines_count=2" /></a>
-  <a href="https://github.com/cairocruz/CornPipBot"><img src="https://github-readme-stats.vercel.app/api/pin/?username=cairocruz&repo=CornPipBot&theme=tokyonight&hide_border=true&description_lines_count=2" /></a>
-</div>
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### 🧩 [HubAgents V2](https://github.com/cairocruz/hubAgentsV2)
+Sistema **multi-agente** para análise de risco com LLMs. Meu TCC.
+
+`Python` `FastAPI` `Microsoft Agent Framework`
+
+</td>
+<td width="50%" valign="top">
+
+### 🎵 [Music.AI](https://github.com/cairocruz/Music.AI)
+Gera músicas com IA, publica e vende num **marketplace** com Stripe e agentes n8n.
+
+`TypeScript` `Stripe` `n8n`
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 🎙️ [ttsAPI](https://github.com/cairocruz/ttsAPI)
+API que **narra vídeos** sozinha: TTS grátis, audio ducking e legenda estilo viral.
+
+`Python` `FastAPI` `Edge TTS` `FFmpeg`
+
+</td>
+<td width="50%" valign="top">
+
+### 🤖 [CornPipBot](https://github.com/cairocruz/CornPipBot)
+Bot em JavaScript, onde começou a história com chatbots.
+
+`JavaScript`
+
+</td>
+</tr>
+</table>
 
 <!-- ============ STATS ============ -->
 <h2>
@@ -65,12 +97,14 @@
 </h2>
 
 <div align="center">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=cairocruz&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true&rank_icon=github" />
-  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=cairocruz&layout=compact&theme=tokyonight&hide_border=true&langs_count=6" />
+  <img src="https://raw.githubusercontent.com/cairocruz/cairocruz/main/profile-3d-contrib/profile-night-rainbow.svg" width="100%" />
+  <br/>
+  <img src="https://raw.githubusercontent.com/cairocruz/cairocruz/main/profile-summary-card-output/tokyonight/0-profile-details.svg" width="100%" />
+  <br/>
+  <img src="https://raw.githubusercontent.com/cairocruz/cairocruz/main/profile-summary-card-output/tokyonight/3-stats.svg" width="49%" />
+  <img src="https://raw.githubusercontent.com/cairocruz/cairocruz/main/profile-summary-card-output/tokyonight/2-most-commit-language.svg" width="49%" />
   <br/>
   <img src="https://streak-stats.demolab.com?user=cairocruz&theme=tokyonight&hide_border=true&locale=pt_BR" />
-  <br/>
-  <img width="98%" src="https://github-readme-activity-graph.vercel.app/graph?username=cairocruz&theme=tokyo-night&hide_border=true&area=true" />
 </div>
 
 <!-- ============ COBRINHA ============ -->
