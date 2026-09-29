@@ -10,6 +10,7 @@ import datetime as dt
 import json
 import os
 import re
+import urllib.error
 import urllib.request
 from html import escape
 from pathlib import Path
@@ -37,7 +38,6 @@ ACHIEVEMENTS = [
 
 # ---------------------------------------------------------------- visual
 W = 880
-CW = 9.2          # largura estimada do caractere (só pra animação de digitação)
 LH = 21           # altura de linha
 X0 = 22
 FONT = "Consolas, 'SFMono-Regular', Menlo, 'DejaVu Sans Mono', 'Courier New', monospace"
@@ -62,12 +62,29 @@ class Seg:
         self.y = (36 + 24) if top else 18
 
     # -- primitivas
+    # Espaços viram NBSP: SVG em <img> ignora white-space:pre e comeria a indentação.
+    # A digitação é por caractere (um tspan cada), então não depende da largura da fonte.
     def _appear(self, t):
         return f'<set attributeName="opacity" to="1" begin="{t:.2f}s" fill="freeze"/>'
 
     @staticmethod
-    def _spans(parts):
-        return "".join(f'<tspan fill="{C[c]}">{escape(s)}</tspan>' for s, c in parts)
+    def _txt(s):
+        return escape(s).replace(" ", " ")
+
+    @classmethod
+    def _spans(cls, parts):
+        return "".join(f'<tspan fill="{C[c]}">{cls._txt(s)}</tspan>' for s, c in parts)
+
+    @classmethod
+    def _typed_spans(cls, parts, t, speed):
+        out, i = [], 0
+        for s, c in parts:
+            for ch in s:
+                out.append(f'<tspan fill="{C[c]}" fill-opacity="0">'
+                           f'<set attributeName="fill-opacity" to="1" begin="{t + i * speed:.2f}s" fill="freeze"/>'
+                           f'{cls._txt(ch)}</tspan>')
+                i += 1
+        return "".join(out), i * speed
 
     def line(self, parts, x=X0, dt_=LINE, bold=False):
         if isinstance(parts, str):
@@ -78,39 +95,31 @@ class Seg:
         Seg.clock += dt_
         self.y += LH
 
-    def typed(self, parts, x=X0, speed=TYPE, pause_after=0.3):
-        """Texto que aparece caractere a caractere (clipPath em degraus)."""
-        n = sum(len(s) for s, _ in parts)
-        cid = f"{self.name}-{len(self.defs)}"
-        vals = ";".join(f"{i * CW:.1f}" for i in range(n + 1)) + f";{W}"
-        dur = speed * (n + 1)
-        self.defs.append(
-            f'<clipPath id="{cid}"><rect x="{x}" y="{self.y - 16}" height="{LH}" width="0">'
-            f'<animate attributeName="width" values="{vals}" calcMode="discrete" '
-            f'begin="{Seg.clock:.2f}s" dur="{dur:.2f}s" fill="freeze"/></rect></clipPath>')
-        self.els.append(f'<text x="{x}" y="{self.y}" clip-path="url(#{cid})">{self._spans(parts)}</text>')
+    def typed(self, parts, x=X0, speed=TYPE, pause_after=0.3, prefix=""):
+        spans, dur = self._typed_spans(parts, Seg.clock, speed)
+        self.els.append(f'<text x="{x}" y="{self.y}" font-weight="bold">{prefix}{spans}</text>')
         Seg.clock += dur + pause_after
+
+    def _prompt(self):
+        return (f'<tspan fill-opacity="0"><set attributeName="fill-opacity" to="1" begin="{Seg.clock:.2f}s" '
+                f'fill="freeze"/>{self._spans(PROMPT)}</tspan>')
 
     def cmd(self, text):
         self.gap(0.35)
-        plen = sum(len(s) for s, _ in PROMPT)
-        self.els.append(f'<text x="{X0}" y="{self.y}" opacity="0" font-weight="bold">'
-                        f'{self._appear(Seg.clock)}{self._spans(PROMPT)}</text>')
+        prefix = self._prompt()
         Seg.clock += 0.35
-        self.typed([(text, "w")], x=X0 + plen * CW)
+        self.typed([(text, "w")], prefix=prefix)
         self.y += LH
 
     def gap(self, k=0.5):
         self.y += LH * k
 
     def cursor(self):
-        plen = sum(len(s) for s, _ in PROMPT)
-        self.els.append(f'<text x="{X0}" y="{self.y}" opacity="0" font-weight="bold">'
-                        f'{self._appear(Seg.clock)}{self._spans(PROMPT)}</text>')
         self.els.append(
-            f'<rect x="{X0 + plen * CW:.1f}" y="{self.y - 15}" width="9" height="18" fill="{C["g"]}" opacity="0">'
-            f'<animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1s" '
-            f'begin="{Seg.clock:.2f}s" repeatCount="indefinite"/></rect>')
+            f'<text x="{X0}" y="{self.y}" font-weight="bold">{self._prompt()}'
+            f'<tspan fill="{C["g"]}" fill-opacity="0">'
+            f'<animate attributeName="fill-opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1s" '
+            f'begin="{Seg.clock:.2f}s" repeatCount="indefinite"/>█</tspan></text>')
         self.y += LH
 
     # -- saída
@@ -179,7 +188,11 @@ def repo_data():
     user = get(f"https://api.github.com/users/{USER}")
     langs = {}
     for r in repos:
-        for k, v in get(r["languages_url"]).items():
+        try:
+            per_repo = get(r["languages_url"])
+        except urllib.error.HTTPError:      # rate limit: cai pra linguagem principal
+            per_repo = {r["language"]: r["size"]} if r["language"] else {}
+        for k, v in per_repo.items():
             langs[k] = langs.get(k, 0) + v
     return {r["name"]: r for r in repos}, user, langs
 
@@ -223,7 +236,7 @@ def build():
         s.y = y0 + i * LH
         if i < len(tux):
             s.els.append(f'<text x="{X0}" y="{s.y}" opacity="0" fill="{C["g"]}" font-weight="bold">'
-                         f'{s._appear(Seg.clock)}{escape(tux[i])}</text>')
+                         f'{s._appear(Seg.clock)}{s._txt(tux[i])}</text>')
         if i < len(info):
             s.els.append(f'<text x="{X0 + 200}" y="{s.y}" opacity="0" font-weight="bold">'
                          f'{s._appear(Seg.clock)}{s._spans(info[i])}</text>')
