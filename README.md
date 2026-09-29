@@ -3,11 +3,11 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f172a,50:1a73e8,100:00d4ff&height=220&section=header&text=Cairo%20Cruz&fontSize=60&fontColor=ffffff&fontAlignY=35&animation=twinkling&desc=IA%20%E2%80%A2%20Agentes%20%E2%80%A2%20Chatbots%20%E2%80%A2%20Automa%C3%A7%C3%A3o&descAlignY=55&descSize=18" width="100%"/>
 
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&duration=2800&pause=700&color=1A73E8&center=true&vCenter=true&multiline=false&repeat=true&width=600&height=50&lines=Fala%2C+eu+sou+o+Cairo+%F0%9F%91%8B;Crio+agentes+de+IA+que+trabalham+sozinhos+%F0%9F%A4%96;Chatbots+%E2%80%A2+Multi-agente+%E2%80%A2+LLMs;Python+%2B+FastAPI+%2B+React+%2B+n8n+%E2%9A%A1;Se+d%C3%A1+pra+automatizar%2C+eu+automatizo." alt="Typing SVG" /></a>
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&duration=2800&pause=700&color=1A73E8&center=true&vCenter=true&multiline=false&repeat=true&width=600&height=50&lines=Fala%2C+eu+sou+o+Cairo+%F0%9F%91%8B;Data+Scientist+%40+Minerva+Foods+%F0%9F%A7%A0;Arquiteturas+multi-agente+com+LLMs+%F0%9F%A4%96;RAG+%E2%80%A2+LangGraph+%E2%80%A2+n8n+%E2%80%A2+Python+%E2%9A%A1;Se+d%C3%A1+pra+automatizar%2C+eu+automatizo." alt="Typing SVG" /></a>
 
 <p>
   <img src="https://img.shields.io/badge/📍_São_Carlos--SP-0f172a?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/💼_Vale_Card-1a73e8?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/🧠_Data_Scientist_@_Minerva_Foods-1a73e8?style=for-the-badge" />
   <img src="https://komarev.com/ghpvc/?username=cairocruz&style=for-the-badge&color=00d4ff&label=VISITAS" />
 </p>
 
@@ -21,9 +21,10 @@
 
 <img align="right" width="300" src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png" />
 
-- <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png" width="20" /> Dev de **chatbots e agentes de IA** na **Vale Card**
-- <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/High%20Voltage.png" width="20" /> Vivo de **LLMs, sistemas multi-agente e automação** (n8n, webhooks, APIs)
-- <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Satellite%20Antenna.png" width="20" /> Background em **infraestrutura de redes**: entendo o sistema de ponta a ponta
+- <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png" width="20" /> **Mid-Level Data Scientist** na **Minerva Foods**, construindo **arquiteturas multi-agente** de IA Generativa
+- <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/High%20Voltage.png" width="20" /> Agentes do protótipo à produção com **Python, LangChain/LangGraph e n8n**
+- <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Bar%20Chart.png" width="20" /> Sistemas **RAG** e governança de GenAI: gestão de prompts, testes e pipelines de avaliação
+- <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Satellite%20Antenna.png" width="20" /> **+4 anos em IA conversacional** (Blip, ValeCard), com background em infraestrutura de redes
 - <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Rocket.png" width="20" /> Agora: construindo um **assistente de vagas estilo NotebookLM** com Claude
 
 <br clear="right"/>
@@ -35,15 +36,32 @@
 </h2>
 
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=python,fastapi,ts,js,react,vite,tailwind,nodejs&theme=dark" /><br/>
-  <img src="https://skillicons.dev/icons?i=supabase,postgres,docker,linux,git,github,vscode&theme=dark" />
+  <img src="https://skillicons.dev/icons?i=python,fastapi,ts,js,cs,dotnet,react,vite,tailwind,nodejs&theme=dark" /><br/>
+  <img src="https://skillicons.dev/icons?i=supabase,postgres,docker,azure,linux,git,github,vscode&theme=dark" />
   <br/><br/>
+  <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white" />
+  <img src="https://img.shields.io/badge/LangGraph-1C3C3C?style=for-the-badge&logo=langgraph&logoColor=white" />
+  <img src="https://img.shields.io/badge/RAG-0f172a?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Claude-D97757?style=for-the-badge&logo=anthropic&logoColor=white" />
   <img src="https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white" />
   <img src="https://img.shields.io/badge/n8n-EA4B71?style=for-the-badge&logo=n8n&logoColor=white" />
   <img src="https://img.shields.io/badge/Stripe-635BFF?style=for-the-badge&logo=stripe&logoColor=white" />
   <img src="https://img.shields.io/badge/Blip-0CC8CC?style=for-the-badge&logoColor=white" />
+  <img src="https://img.shields.io/badge/IBM_Watson-052FAD?style=for-the-badge&logo=ibm&logoColor=white" />
+  <img src="https://img.shields.io/badge/Zendesk-03363D?style=for-the-badge&logo=zendesk&logoColor=white" />
 </div>
+
+<!-- ============ TRAJETORIA ============ -->
+<h2>
+  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Laptop.png" width="35" />
+  Trajetória
+</h2>
+
+| Quando | Onde | O que eu faço/fiz |
+|---|---|---|
+| **abr/2026 → hoje** | 🥩 **Minerva Foods**<br/><sub>Mid-Level Data Scientist</sub> | Arquiteturas **multi-agente** de GenAI com Python, LangChain/LangGraph e n8n. Sistemas **RAG** com conhecimento da empresa e governança de GenAI (prompts, testes, avaliação). |
+| **jan/2024 → mar/2026** | 💳 **ValeCard**<br/><sub>Conversational AI Specialist</sub> | Liderei a estratégia de chatbot de ponta a ponta. Personas com IA Generativa que aumentaram o engajamento e um **agente n8n que analisa editais** de licitação sozinho. |
+| **dez/2021 → set/2023** | 💬 **Blip**<br/><sub>Conversational AI Developer</sub> | Chatbots para grandes clientes com JavaScript e C#/.NET. Bot 100% IA com **IBM Watson**, integração nativa **Blip ↔ Zendesk** e CI/CD na Azure. |
 
 <!-- ============ PROJETOS ============ -->
 <h2>
