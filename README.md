@@ -9,7 +9,7 @@
 <a href="https://github.com/cairocruz/Music.AI"><img align="left" width="100%" src="assets/term/06-project-1.svg" alt="Music.AI: gera música com IA e vende no marketplace" /></a>
 <a href="https://github.com/cairocruz/ttsAPI"><img align="left" width="100%" src="assets/term/06-project-2.svg" alt="ttsAPI: API que narra vídeo: TTS, ducking e legenda viral" /></a>
 <a href="https://github.com/cairocruz/CornPipBot"><img align="left" width="100%" src="assets/term/06-project-3.svg" alt="CornPipBot: bot em JavaScript, onde tudo começou" /></a>
-<img align="left" width="100%" src="assets/term/07-contrib.svg" alt="113 contributions in the last year" />
+<img align="left" width="100%" src="assets/term/07-contrib.svg" alt="118 contributions in the last year" />
 <img align="left" width="100%" src="assets/term/08-stats.svg" alt="linguagens mais usadas" />
 <img align="left" width="100%" src="assets/term/09-bye.svg" alt="valeu por passar aqui" />
 
