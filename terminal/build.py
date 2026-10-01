@@ -44,6 +44,7 @@ FONT = "Consolas, 'SFMono-Regular', Menlo, 'DejaVu Sans Mono', 'Courier New', mo
 BG = "#010409"
 C = dict(g="#39d353", b="#58a6ff", c="#39c5cf", y="#e3b341", r="#ff7b72",
          m="#d2a8ff", t="#c9d1d9", d="#8b949e", w="#f0f6fc")
+NOT_LANGS = {"Batchfile", "Dockerfile", "Procfile", "Makefile"}
 LEVELS = ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"]
 PROMPT = [("cairo@minerva", "g"), (":", "t"), ("~", "b"), ("$ ", "t")]
 
@@ -305,7 +306,7 @@ def build():
         s.y = 15
         s.line([("drwxr-xr-x  ", "d"), (f"★{stars:<3}", "y"), (f"{lang:<11}", "m"), (f"{upd:<9}", "d"),
                 (f"{name + '/':<14}", "b"), (desc, "t")], dt_=0.1)
-        s.y -= 1
+        s.y = 27          # linha com a mesma altura das outras (LH)
         blocks.append((s.save(), f"https://github.com/{USER}/{name}", f"{name}: {desc}"))
 
     # 07 · contribuições
@@ -354,6 +355,8 @@ def build():
     s.line([("repos ", "d"), (str(len(repos)), "w"), ("   stars ", "d"), (str(sum(r["stargazers_count"] for r in repos.values())), "w"),
             ("   followers ", "d"), (str(user.get("followers", 0)), "w"), ("   since ", "d"), (user.get("created_at", "")[:4], "w")])
     s.gap(0.3)
+    for k in NOT_LANGS:
+        langs.pop(k, None)
     tot = sum(langs.values()) or 1
     for name, size in sorted(langs.items(), key=lambda kv: -kv[1])[:6]:
         pct = size / tot * 100

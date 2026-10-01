@@ -5,7 +5,7 @@ on:
     - cron: "0 3 * * *"   # todo dia: atualiza grafo, stats e data do login
   workflow_dispatch:
   push:
-    branches: [main, terminal-preview]
+    branches: [main]
     paths: ["terminal/**"]
 
 permissions:
