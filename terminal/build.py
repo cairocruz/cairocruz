@@ -248,12 +248,14 @@ def build():
                      f'{s._appear(Seg.clock)}</rect>')
     Seg.clock += 0.2
     s.y += LH
-    s.cmd("cat about.txt")
-    for tag, txt in [("pt", "Ensino robô a trabalhar pra ninguém precisar fazer tarefa chata."),
-                     ("pt", "Vim de infra de redes: entendo o sistema do cabo ao prompt."),
-                     ("en", "I build multi-agent GenAI systems, from prototype to production."),
-                     ("en", "Network infra background: I get systems end to end, cable to prompt.")]:
-        s.line([(f"[{tag}] ", "d"), (txt, "t")])
+    s.cmd("cat about.yml")
+    for k, v in [("missao", "tirar tarefa chata das mãos de gente"),
+                 ("foco", "agentes de IA em produção, não em notebook"),
+                 ("caminho", "redes → chatbots → multi-agente"),
+                 ("regra", "fez duas vezes? vira automação"),
+                 ("busco", "projetos de agentes, automação e evals")]:
+        s.line([(f"{k + ':':<10}", "c"), (v, "t")])
+    s.line([("# en: network guy turned multi-agent builder", "d")])
     blocks.append((s.save(), None, "neofetch: Cairo Cruz, Data Scientist @ Minerva Foods, São Carlos"))
 
     # 03 · carreira
