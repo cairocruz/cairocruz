@@ -249,13 +249,13 @@ def build():
     Seg.clock += 0.2
     s.y += LH
     s.cmd("cat about.yml")
-    for k, v in [("missao", "tirar tarefa chata das mãos de gente"),
-                 ("foco", "agentes de IA em produção, não em notebook"),
-                 ("caminho", "redes → chatbots → multi-agente"),
-                 ("regra", "fez duas vezes? vira automação"),
-                 ("busco", "projetos de agentes, automação e evals")]:
-        s.line([(f"{k + ':':<10}", "c"), (v, "t")])
-    s.line([("# en: network guy turned multi-agent builder", "d")])
+    for k, v in [("atuação", "Data Scientist focado em GenAI e sistemas multi-agente"),
+                 ("entrego", "soluções com LLMs do protótipo à produção, com métricas e evals"),
+                 ("domínio", "LangGraph, RAG, prompt engineering e automação com n8n"),
+                 ("trajetória", "4+ anos em IA conversacional, com base em infraestrutura de redes"),
+                 ("objetivo", "automatizar processos de negócio com IA confiável e mensurável")]:
+        s.line([(f"{k + ':':<13}", "c"), (v, "t")])
+    s.line([("# en: Data Scientist building production-grade multi-agent GenAI systems.", "d")])
     blocks.append((s.save(), None, "neofetch: Cairo Cruz, Data Scientist @ Minerva Foods, São Carlos"))
 
     # 03 · carreira
